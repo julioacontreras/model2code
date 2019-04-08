@@ -49,8 +49,8 @@ This is the architecture divided into inputs, interpreters and outputs.
     "symbol": "@@",
     "components": [
         {
+            "name": "MyForm",
             "parameters":{
-                "name": "MyForm",
                 "area": "components",
                 "filename": "myForm.vue",
                 "tag": "my-form"
