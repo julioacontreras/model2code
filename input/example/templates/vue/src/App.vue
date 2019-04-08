@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-      @@add-component-on-template@@
+        @@add-component-in-template@@
     </div>
 </template>
 
@@ -10,7 +10,7 @@
 export default {
     name: 'app',
     components:{
-    @@add-component-on-class@@
+    @@add-component-in-class@@
     }
 }
 </script>

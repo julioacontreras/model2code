@@ -17,17 +17,17 @@
         { "action": "copy", "filename": "main.js", "pathIn":"/src", "pathOut":"/front/src",
                   "actions": [
                         {"action": "addImports", "tag": "add-imports"},
-                        {"action": "addComponentOnGlobal", "tag": "add-component-on-global"},
-                        {"action": "addComponentOnClass", "tag": "add-component-on-class"},
-                        {"action": "addComponentOnTemplate", "tag": "add-component-on-template"}
+                        {"action": "addComponentInGlobal", "tag": "add-component-in-global"},
+                        {"action": "addComponentInClass", "tag": "add-component-in-class"},
+                        {"action": "addComponentInTemplate", "tag": "add-component-in-template"}
                   ]
         },
         { "action": "copy", "filename": "App.vue", "pathIn":"/src", "pathOut":"/front/src",
             "actions": [
                 {"action": "addImports", "tag": "add-imports"},
-                {"action": "addComponentOnGlobal", "tag": "add-component-on-global"},
-                {"action": "addComponentOnClass", "tag": "add-component-on-class"},
-                {"action": "addComponentOnTemplate", "tag": "add-component-on-template"}
+                {"action": "addComponentInGlobal", "tag": "add-component-in-global"},
+                {"action": "addComponentInClass", "tag": "add-component-in-class"},
+                {"action": "addComponentInTemplate", "tag": "add-component-in-template"}
             ]
         },
         { "action": "createDirectory", "pathOut":"/front/src/components"},

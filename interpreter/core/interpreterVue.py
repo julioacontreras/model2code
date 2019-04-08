@@ -13,25 +13,25 @@ class InterpreterVue:
         return self.config
 
     def addImports(self, data):
-        code = "\n"
+        code = ""
         for c in data['components']:
             code += "import {} from '@/{}/{}'\n".format(c['parameters']['name'], c['parameters']['area'], c['parameters']['filename'])
         return code
 
-    def addComponentOnGlobal(self, data):
-        code = "\n"
+    def addComponentInGlobal(self, data):
+        code = ""
         for c in data['components']:
             code += "Vue.component('{}','{}');\n".format(c['parameters']['tag'] , c['parameters']['name'])
         return code
 
-    def addComponentOnClass(self, data):
+    def addComponentInClass(self, data):
         code = ""
         for c in data['components']:
             code += "   '{}':{},\n".format(c['parameters']['tag'], c['parameters']['name'])
         return code
 
-    def addComponentOnTemplate(self, data):
-        code = "\n"
+    def addComponentInTemplate(self, data):
+        code = ""
         for c in data['components']:
             code += "<{}/>\n".format(c['parameters']['tag'])
         return code
@@ -41,15 +41,15 @@ class InterpreterVue:
             for el in item['actions']:
                 if el['action'] == "addImports":
                     content = self.interpreter.replace(content, el['tag'], self.addImports(model) )
-                if el['action'] == "addComponentOnGlobal":
-                    print('  adding component on global...')
-                    content = self.interpreter.replace(content, el['tag'], self.addComponentOnGlobal(model) )
-                if el['action'] == "addComponentOnClass":
-                    print('  adding component on class...')
-                    content = self.interpreter.replace(content, el['tag'], self.addComponentOnClass(model) )
-                if el['action'] == "addComponentOnTemplate":
-                    print('  adding component on template...')
-                    content = self.interpreter.replace(content, el['tag'], self.addComponentOnTemplate(model) )
+                if el['action'] == "addComponentInGlobal":
+                    print('  adding component in global...')
+                    content = self.interpreter.replace(content, el['tag'], self.addComponentInGlobal(model) )
+                if el['action'] == "addComponentInClass":
+                    print('  adding component in class...')
+                    content = self.interpreter.replace(content, el['tag'], self.addComponentInClass(model) )
+                if el['action'] == "addComponentInTemplate":
+                    print('  adding component in template...')
+                    content = self.interpreter.replace(content, el['tag'], self.addComponentInTemplate(model) )
         return content
 
     def generate(self, filenameJSON):
