@@ -1,0 +1,26 @@
+{
+    "project": "My Application",
+    "description": "My super amazing application",
+    "symbol": "@@",
+    "components": [
+        {
+            "parameters":{
+                "name": "MyForm",
+                "area": "components",
+                "filename": "MyForm.vue",
+                "tag": "my-form"
+            }
+        }
+    ],
+    "models": [
+        {
+            "name": "user",
+            "fields": [
+                {"field": "id", "type": "number"},
+                {"field": "name", "type": "string"},
+                {"field": "age", "type": "integer"},
+                {"field": "password", "type": "string"}
+            ]
+        }
+    ]
+}

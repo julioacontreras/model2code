@@ -19,7 +19,7 @@ class InterpreterPG:
     def addColumns(self, data):
         code = "\n"
         for c in data['fields']:
-            code += "{} TYPE {},\n".format(c['field'] , c['type'])
+            code += "{} {},\n".format(c['field'] , c['type'])
         return code
 
     def generateCode(self, item, model, content):

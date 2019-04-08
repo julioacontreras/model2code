@@ -25,10 +25,9 @@ class InterpreterVue:
         return code
 
     def addComponentOnClass(self, data):
-        code = "components:{\n"
+        code = ""
         for c in data['components']:
-            code += "   {},\n".format(c['parameters']['name'])
-        code += "},\n"
+            code += "   '{}':{},\n".format(c['parameters']['tag'], c['parameters']['name'])
         return code
 
     def addComponentOnTemplate(self, data):

@@ -8,7 +8,7 @@ class Interpreter:
 
     def __init__(self, configJSON):
         self.config = self.loadJSON(configJSON)
-        self.symbol = "@@"
+        self.symbol = self.config['symbol']
         pass
 
     def restartProject(self):

@@ -1,0 +1,17 @@
+{
+    "root": "/example",
+    "inPath": "../../input/example",
+    "outPath": "c:/s2/www/model2code/output",
+    "templatePath": "../input/example/templates/postgres",
+    "symbol": "@@",
+    "actions" : [
+        { "action": "createDirectory", "pathOut":"/pg/"},
+        { "action": "createDirectory", "pathOut":"/pg/tables"},
+        { "action": "copyTables", "filename": "table.sql", "pathIn":"/tables", "pathOut":"/pg/tables",
+            "actions": [
+                  {"action": "addColumns", "tag": "add-columns"},
+                  {"action": "addName", "tag": "add-name"}
+            ]
+        }
+    ]
+}
