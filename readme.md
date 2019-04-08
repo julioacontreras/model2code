@@ -40,8 +40,9 @@ This is the architecture divided into inputs, interpreters and outputs.
 +------------+   +--------------+   +--------------+
 ~~~
 
-### Model example
+### Example create your interpreter
 
+Model:
 ~~~json
 {
     "project": "My Application",
@@ -71,8 +72,7 @@ This is the architecture divided into inputs, interpreters and outputs.
 }
 ~~~
 
-### Interpreter config example
-
+Interpreter config: 
 ~~~json
 {
     "root": "/example",
@@ -93,8 +93,7 @@ This is the architecture divided into inputs, interpreters and outputs.
 }
 ~~~
 
-### Template code example
-
+Template:
 ~~~javascript
 <template>
     <div/>
@@ -110,8 +109,7 @@ export default {
 </script>
 ~~~
 
-### Interpreter example
-
+Interpreter:
 ~~~python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
