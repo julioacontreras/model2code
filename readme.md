@@ -81,28 +81,14 @@ This is the architecture divided into inputs, interpreters and outputs.
     "templatePath": "../input/example/templates/vue",
     "symbol": "@@",
     "actions" : [
-        { "action": "restartProject-" },
         { "action": "createDirectory", "pathOut":""},
         { "action": "createDirectory", "pathOut":"/front"},
-        { "action": "copy", "filename": "babel.config.js", "pathIn":"", "pathOut":"/front"},
-        { "action": "copy", "filename": "package-lock.json", "pathIn":"", "pathOut":"/front"},
-        { "action": "copy", "filename": "package.json", "pathIn":"", "pathOut":"/front"},
-        { "action": "copy", "filename": "yarn.lock", "pathIn":"", "pathOut":"/front"},
         { "action": "createDirectory", "pathOut":"/front/src"},
-        { "action": "copy", "filename": "main.js", "pathIn":"/src", "pathOut":"/front/src",
-                  "actions": [
-                        {"action": "addImports", "tag": "add-imports"},
-                        {"action": "addComponentOnGlobal", "tag": "add-component-on-global"}
-                  ]
-        },
         { "action": "copy", "filename": "App.vue", "pathIn":"/src", "pathOut":"/front/src",
             "actions": [
-                  {"action": "addComponentOnClass", "tag": "add-component-on-class"},
-                  {"action": "addComponentOnTemplate", "tag": "add-component-on-template"}
+                  {"action": "myFunction", "tag": "my-tag"}
             ]
-        },
-        { "action": "createDirectory", "pathOut":"/front/src/components"},
-        { "action": "copy", "filename": "myForm.vue", "pathIn":"/src/components", "pathOut":"/front/src/components"}
+        }
     ]
 }
 ~~~
@@ -111,14 +97,14 @@ This is the architecture divided into inputs, interpreters and outputs.
 
 ~~~javascript
 <template>
-    @@add-component-on-template@@
+    <div/>
 </template>
 
 <script>
 
 export default {
       components:{
-          @@add-component-on-class@@
+          @@my-tag@@
       }
 }
 </script>
@@ -141,25 +127,7 @@ class InterpreterVue:
     def getConfig(self):
         return self.config
 
-    def addImports(self, data):
-        code = "\n"
-        for c in data['components']:
-            code += "import {} from '@/{}/{}'\n".format(c['parameters']['name'], c['parameters']['area'], c['parameters']['filename'])
-        return code
-
-    def addComponentOnGlobal(self, data):
-        code = "\n"
-        for c in data['components']:
-            code += "Vue.component('{}','{}');\n".format(c['parameters']['tag'] , c['parameters']['name'])
-        return code
-
-    def addComponentOnClass(self, data):
-        code = ""
-        for c in data['components']:
-            code += "   {},\n".format(c['parameters']['name'])
-        return code
-
-    def addComponentOnTemplate(self, data):
+    def myFunction(self, data):
         code = "\n"
         for c in data['components']:
             code += "<{}/>\n".format(c['parameters']['tag'])
@@ -168,17 +136,9 @@ class InterpreterVue:
     def generateCode(self, item, model, content):
         if 'actions' in item:
             for el in item['actions']:
-                if el['action'] == "addImports":
-                    content = self.interpreter.replace(content, el['tag'], self.addImports(model) )
-                if el['action'] == "addComponentOnGlobal":
-                    print('  adding component on global...')
-                    content = self.interpreter.replace(content, el['tag'], self.addComponentOnGlobal(model) )
-                if el['action'] == "addComponentOnClass":
-                    print('  adding component on class...')
-                    content = self.interpreter.replace(content, el['tag'], self.addComponentOnClass(model) )
-                if el['action'] == "addComponentOnTemplate":
-                    print('  adding component on template...')
-                    content = self.interpreter.replace(content, el['tag'], self.addComponentOnTemplate(model) )
+                if el['action'] == "myFunction":
+                    print('  adding myFunction works!...')
+                    content = self.interpreter.replace(content, el['tag'], self.myFunction(model) )
         return content
 
     def generate(self, filenameJSON):
@@ -191,9 +151,6 @@ class InterpreterVue:
         print('Generation actions Vue: ')
         print('------------------- ')
         for el in self.config['actions']:
-
-            if el['action'] == "restartProject":
-                self.interpreter.restartProject()
 
             if el['action'] == "createDirectory":
                 print("- Create directory {} ...".format(el['pathOut']))
@@ -208,7 +165,3 @@ class InterpreterVue:
                 self.interpreter.saveFile(filenameOut, content)
                 self.interpreter.verifyFile(filenameOut)
 
-            if el['action'] == "execute":
-                cmd = el['command']
-                self.interpreter.execute(cmd)
-~~~
