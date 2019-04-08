@@ -71,7 +71,7 @@ This is the architecture divided into inputs, interpreters and outputs.
 }
 ~~~
 
-### Config example
+### Interpreter config example
 
 ~~~json
 {
@@ -107,7 +107,7 @@ This is the architecture divided into inputs, interpreters and outputs.
 }
 ~~~
 
-### Template example
+### Template code example
 
 ~~~javascript
 <template>
