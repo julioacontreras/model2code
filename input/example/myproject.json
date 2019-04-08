@@ -4,8 +4,8 @@
     "symbol": "@@",
     "components": [
         {
+            "name": "Header",
             "parameters":{
-                "name": "Header",
                 "area": "components",
                 "filename": "Header.vue",
                 "tag": "my-header"

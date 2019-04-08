@@ -15,19 +15,19 @@ class InterpreterVue:
     def addImports(self, data):
         code = ""
         for c in data['components']:
-            code += "import {} from '@/{}/{}'\n".format(c['parameters']['name'], c['parameters']['area'], c['parameters']['filename'])
+            code += "import {} from '@/{}/{}'\n".format(c['name'], c['parameters']['area'], c['parameters']['filename'])
         return code
 
     def addComponentInGlobal(self, data):
         code = ""
         for c in data['components']:
-            code += "Vue.component('{}','{}');\n".format(c['parameters']['tag'] , c['parameters']['name'])
+            code += "Vue.component('{}','{}');\n".format(c['parameters']['tag'] , c['name'])
         return code
 
     def addComponentInClass(self, data):
         code = ""
         for c in data['components']:
-            code += "   '{}':{},\n".format(c['parameters']['tag'], c['parameters']['name'])
+            code += "   '{}':{},\n".format(c['parameters']['tag'], c['name'])
         return code
 
     def addComponentInTemplate(self, data):
