@@ -8,7 +8,7 @@
 export default {
     data(){
         return {
-            message:"teste"
+            message:"My project!"
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        @@add-elements-in-template@@
+@@add-model-in-template@@
     </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
     data(){
         return {
-            @@add-data-in-class@@
+@@add-model-in-data@@
         }
     },
     methods: {

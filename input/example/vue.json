@@ -31,6 +31,13 @@
             ]
         },
         { "action": "createDirectory", "pathOut":"/front/src/components"},
-        { "action": "copy", "filename": "MyForm.vue", "pathIn":"/src/components", "pathOut":"/front/src/components"}
+        { "action": "copy", "filename": "Header.vue", "pathIn":"/src/components", "pathOut":"/front/src/components"},
+        { "action": "createDirectory", "pathOut":"/front/src/views"},
+        { "action": "copyViews", "filename": "view.generic.vue", "pathIn":"/src/views", "pathOut":"/front/src/views",
+            "actions": [
+                {"action": "addModelInTemplate", "tag": "add-model-in-template"},
+                {"action": "addModelInData", "tag": "add-model-in-data"}
+            ]
+        }
     ]
 }

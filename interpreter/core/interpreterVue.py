@@ -36,6 +36,29 @@ class InterpreterVue:
             code += "<{}/>\n".format(c['parameters']['tag'])
         return code
 
+    def addModelInTemplate(self, elM):
+        code = ""
+        for m in elM['fields']:
+            title = ""
+            if 'label' in m['parameters']:
+                title = '<label>{}</label>'.format(m['parameters']['label'])
+            code += "           {}<{} v-model='{}' type='{}' />\n".format(
+                    title,
+                    m['parameters']['tagTemplate'],
+                    m['field'],
+                    m['parameters']['typeElement']
+                )
+        return code
+
+    def addModelInData(self, elM):
+        code = ""
+        for m in elM['fields']:
+            code += "           '{}':'{}',\n".format(
+                    m['field'],
+                    m['parameters']['valueDefaultData']
+                )
+        return code
+
     def generateCode(self, item, model, content):
         if 'actions' in item:
             for el in item['actions']:
@@ -50,6 +73,17 @@ class InterpreterVue:
                 if el['action'] == "addComponentInTemplate":
                     print('  adding component in template...')
                     content = self.interpreter.replace(content, el['tag'], self.addComponentInTemplate(model) )
+        return content
+
+    def generateCodeViews(self, item, elM, content):
+        if 'actions' in item:
+            for el in item['actions']:
+                if el['action'] == "addModelInTemplate":
+                    print('  adding model in template...')
+                    content = self.interpreter.replace(content, el['tag'], self.addModelInTemplate(elM) )
+                if el['action'] == "addModelInData":
+                    print('  adding model in data...')
+                    content = self.interpreter.replace(content, el['tag'], self.addModelInData(elM) )
         return content
 
     def generate(self, filenameJSON):
@@ -78,6 +112,16 @@ class InterpreterVue:
                 filenameOut = outputDirectory+"{}/{}".format(el["pathOut"], el['filename'])
                 self.interpreter.saveFile(filenameOut, content)
                 self.interpreter.verifyFile(filenameOut)
+
+            if el['action'] == "copyViews":
+                for elM in model['models']:
+                    filenameIn = templateDirectory+"{}/{}".format(el["pathIn"], el['filename'])
+                    print("- Coping file {} ...".format(filenameIn))
+                    content = self.interpreter.loadFile(filenameIn)
+                    content = self.generateCodeViews(el, elM, content)
+                    filenameOut = outputDirectory+"{}/{}".format(el["pathOut"], elM['name'].capitalize() + ".vue" )
+                    self.interpreter.saveFile(filenameOut, content)
+                    self.interpreter.verifyFile(filenameOut)
 
             if el['action'] == "execute":
                 cmd = el['command']

@@ -5,10 +5,10 @@
     "components": [
         {
             "parameters":{
-                "name": "MyForm",
+                "name": "Header",
                 "area": "components",
-                "filename": "MyForm.vue",
-                "tag": "my-form"
+                "filename": "Header.vue",
+                "tag": "my-header"
             }
         }
     ],
@@ -16,10 +16,37 @@
         {
             "name": "user",
             "fields": [
-                {"field": "id", "type": "number"},
-                {"field": "name", "type": "string"},
-                {"field": "age", "type": "integer"},
-                {"field": "password", "type": "string"}
+                {"field": "id", "type": "number",
+                    "parameters": {
+                        "tagTemplate": "input",
+                        "typeElement": "hidden",
+                        "valueDefaultData": "1"
+                    }
+                },
+                {"field": "name", "type": "string",
+                    "parameters": {
+                        "tagTemplate": "input",
+                        "typeElement": "text",
+                        "label": "Name:",
+                        "valueDefaultData": "A"
+                    }
+                },
+                {"field": "age", "type": "integer",
+                    "parameters": {
+                        "tagTemplate": "input",
+                        "typeElement": "number",
+                        "label": "Age:",
+                        "valueDefaultData": "18"
+                    }
+                },
+                {"field": "password", "type": "string",
+                    "parameters": {
+                        "tagTemplate": "input",
+                        "typeElement": "password",
+                        "label": "Password:",
+                        "valueDefaultData": "teste"
+                    }
+                }
             ]
         }
     ]
