@@ -9,7 +9,7 @@ Tool to convert model to code.
 ## Execute
 
 ~~~
-model2code/interpreter/python main.py
+interpreter/python main.py
 ~~~
 
 ## Why
