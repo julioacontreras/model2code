@@ -12,7 +12,7 @@ Tool to convert model to code.
 
 * Python 2.7.15
 
-## Execute
+## Generate code
 
 python main.py [`projectJSON`] [`modelPath`] [`interpreters`]
 
