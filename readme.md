@@ -8,8 +8,16 @@ Tool to convert model to code.
 
 ## Execute
 
+python main.py [`projectJSON`] [`modelPath`] [`interpreters`]
+
+`projectJSON`: Filename project in format JSON.
+
+`modelPath`: Pathname project with containg model files.
+
+`interpreters`: Interpreters to want use.
+
 ~~~
-interpreter/python main.py
+interpreter/$python main.py myproject.json ../input/example interpreterVue:vue.json,interpreterPG:pg.json
 ~~~
 
 ## Why
@@ -71,7 +79,7 @@ Model:
 }
 ~~~
 
-Interpreter config: 
+Interpreter config:
 ~~~json
 {
     "root": "/example",
@@ -153,4 +161,3 @@ class InterpreterVue:
                 filenameOut = outputDirectory+"{}/{}".format(el["pathOut"], el['filename'])
                 self.interpreter.saveFile(filenameOut, content)
                 self.interpreter.verifyFile(filenameOut)
-
