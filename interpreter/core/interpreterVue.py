@@ -9,9 +9,6 @@ class InterpreterVue:
         self.config = self.interpreter.getConfig()
         pass
 
-    def getConfig(self):
-        return self.config
-
     def addImports(self, data):
         code = ""
         for c in data['components']:

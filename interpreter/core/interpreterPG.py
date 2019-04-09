@@ -9,9 +9,6 @@ class InterpreterPG:
         self.config = self.interpreter.getConfig()
         pass
 
-    def getConfig(self):
-        return self.config
-
     def addName(self, data):
         code = data['name']
         return code

@@ -46,8 +46,40 @@
                         "label": "Password:",
                         "valueDefaultData": "teste"
                     }
+                },
+                {"field": "foo", "type": "select",
+                    "parameters": {
+                        "tagTemplate": "input",
+                        "typeElement": "password",
+                        "label": "Password:",
+                        "valueDefaultData": "teste",
+                        "items":[
+
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cutomer",
+            "fields": [
+                {"field": "id", "type": "number",
+                    "parameters": {
+                        "tagTemplate": "input",
+                        "typeElement": "hidden",
+                        "valueDefaultData": "1"
+                    }
+                },
+                {"field": "name", "type": "string",
+                    "parameters": {
+                        "tagTemplate": "input",
+                        "typeElement": "text",
+                        "label": "Name:",
+                        "valueDefaultData": "A"
+                    }
                 }
             ]
         }
+
     ]
 }
