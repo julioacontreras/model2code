@@ -10,9 +10,9 @@ Tool to convert model to code.
 
 python main.py [`projectJSON`] [`modelPath`] [`interpreters`]
 
-`projectJSON`: Filename project in format JSON.
+`projectJSON`: Project filename in format JSON.
 
-`modelPath`: Pathname project with containg the model files.
+`modelPath`: Project path with containg the model files.
 
 `interpreters`: Interpreters you want to use.
 
