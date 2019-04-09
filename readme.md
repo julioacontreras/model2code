@@ -131,7 +131,7 @@ class InterpreterVue:
         pass
 
     def myFunction(self, data):
-        code = "\n"
+        code = ""
         for c in data['components']:
             code += "<{}/>\n".format(c['parameters']['tag'])
         return code
