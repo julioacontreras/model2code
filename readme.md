@@ -48,7 +48,7 @@ This is the architecture divided into inputs, interpreters and outputs.
 
 ### Get started to create your interpreter
 
-Model:
+This code is your model project. Here will put all information about your project, like: Components, Models and Flow.
 ~~~json
 {
     "project": "My Application",
@@ -77,7 +77,7 @@ Model:
 }
 ~~~
 
-Interpreter config:
+This is a config file interpreter. Is a simple example when you connect the actions like `myFunction` with `my-tag` to generate code:
 ~~~json
 {
     "root": "/example",
@@ -98,7 +98,7 @@ Interpreter config:
 }
 ~~~
 
-Template:
+This is a simple example code template than interpreter will replace de tag `@@my-tag@@`:
 ~~~javascript
 <template>
     <div/>
