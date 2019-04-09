@@ -114,7 +114,7 @@ export default {
 </script>
 ~~~
 
-Interpreter:
+This is a basic interpreter when is execute de action `myFunction` replacing de tag `@@my-tag@@` to code HTML:
 ~~~python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
