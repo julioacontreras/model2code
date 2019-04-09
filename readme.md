@@ -77,6 +77,7 @@ This code is your model project. Here will put all information about your projec
 }
 ~~~
 
+
 This is a config file interpreter. Is a simple example when you connect the actions like `myFunction` with `my-tag` to generate code:
 ~~~json
 {
@@ -98,6 +99,7 @@ This is a config file interpreter. Is a simple example when you connect the acti
 }
 ~~~
 
+
 This is a simple example code template than interpreter will replace de tag `@@my-tag@@`:
 ~~~javascript
 <template>
@@ -113,6 +115,7 @@ export default {
 }
 </script>
 ~~~
+
 
 This is a basic interpreter when is execute de action `myFunction` replacing de tag `@@my-tag@@` to code HTML:
 ~~~python
