@@ -12,7 +12,7 @@ python main.py [`projectJSON`] [`modelPath`] [`interpreters`]
 
 `projectJSON`: Project filename in format JSON.
 
-`modelPath`: Project path with containg the model files.
+`modelPath`: Project path than containg the model files.
 
 `interpreters`: Interpreters you want to use.
 
