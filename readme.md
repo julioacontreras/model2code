@@ -121,9 +121,6 @@ class InterpreterVue:
         self.config = self.interpreter.getConfig()
         pass
 
-    def getConfig(self):
-        return self.config
-
     def myFunction(self, data):
         code = "\n"
         for c in data['components']:
