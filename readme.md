@@ -14,6 +14,10 @@ Tool to convert model to code.
 
 ## Generate code
 
+~~~
+interpreter/$python main.py myproject.json ../input/example interpreterVue:vue.json,interpreterPG:pg.json
+~~~
+
 python main.py [`projectJSON`] [`modelPath`] [`interpreters`]
 
 `projectJSON`: Project filename in format JSON.
@@ -21,10 +25,6 @@ python main.py [`projectJSON`] [`modelPath`] [`interpreters`]
 `modelPath`: Project path than containg the model files.
 
 `interpreters`: Interpreters you want to use.
-
-~~~
-interpreter/$python main.py myproject.json ../input/example interpreterVue:vue.json,interpreterPG:pg.json
-~~~
 
 ## How works
 
