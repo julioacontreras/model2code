@@ -6,7 +6,7 @@ Tool to convert model to code.
 
 * Easy to migrate technology: Once created templates and model, is possible change the technology by changing the interpreter.
 
-* Flexible: If you can choose which parts of your project are generic or not.
+* Flexible: If you can choose which parts want generic or not.
 
 ## Dependencies
 
