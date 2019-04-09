@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from interpreter import Interpreter
 
-class InterpreterPG:
+class InterpreterCode:
 
     def __init__(self, configJSON):
         self.interpreter = Interpreter(configJSON)
