@@ -4,7 +4,7 @@ Tool to convert model to code.
 
 * Design more and program less: Most projects have a lot of similar code. This tool allows you to create templates and models to generate code. Increasing productivity and reducing human error.
 
-* Easy to migrate technology: Once you have templates and model, you can change the technology by changing the interpreter.
+* Easy to migrate technology: Once created templates and model, is possible change the technology by changing the interpreter.
 
 * Flexible: If you can choose which parts of your project are generic or not.
 
