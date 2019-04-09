@@ -142,11 +142,6 @@ class InterpreterVue:
         templateDirectory = self.interpreter.getPathTemplate()
         outputDirectory = self.interpreter.getPathOut()
         model = self.interpreter.loadModel(filenameJSON)
-        print('  Name: ' + model['project'])
-        print('  description: ' + model['description'])
-        print('')
-        print('Generation actions Vue: ')
-        print('------------------- ')
         for el in self.config['actions']:
 
             if el['action'] == "createDirectory":
