@@ -2,6 +2,14 @@
 
 Tool to convert model to code.
 
+## Why
+
+* Design more and program less: Most projects have a lot of similar code. This tool allows you to create templates and models to generate code. Increasing productivity and reducing human error.
+
+* Facilitating technology migration: Once you have templates and templates, you can change the technology by changing the interpreter.
+
+* Flexible: If you can choose which parts of your project are generic or not.
+
 ## Dependencies
 
 * Python 2.7.15
@@ -19,14 +27,6 @@ python main.py [`projectJSON`] [`modelPath`] [`interpreters`]
 ~~~
 interpreter/$python main.py myproject.json ../input/example interpreterVue:vue.json,interpreterPG:pg.json
 ~~~
-
-## Why
-
-* Design more and program less: Most projects have a lot of similar code. This tool allows you to create templates and models to generate code. Increasing productivity and reducing human error.
-
-* Facilitating technology migration: Once you have templates and templates, you can change the technology by changing the interpreter.
-
-* Flexible: If you can choose which parts of your project are generic or not.
 
 ## How works
 
