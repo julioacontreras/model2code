@@ -47,7 +47,6 @@ Model:
 {
     "project": "My Application",
     "description": "My super amazing application",
-    "symbol": "@@",
     "components": [
         {
             "name": "MyForm",
