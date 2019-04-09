@@ -46,7 +46,7 @@ This is the architecture divided into inputs, interpreters and outputs.
 +------------+   +--------------+   +--------------+
 ~~~
 
-### Example to create your interpreter
+### Get started to create your interpreter
 
 Model:
 ~~~json
