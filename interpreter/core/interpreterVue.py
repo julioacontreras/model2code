@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from interpreter import Interpreter
 
-class InterpreterCode:
+class InterpreterVue:
 
     def __init__(self, configJSON):
         self.interpreter = Interpreter(configJSON)
@@ -24,7 +24,8 @@ class InterpreterCode:
     def addComponentInClass(self, data):
         code = ""
         for c in data['components']:
-            code += "   '{}':{},\n".format(c['parameters']['tag'], c['name'])
+            s = self.interpreter.getSeparator(",", "", c, data['components'])
+            code += "   '{}':{}{}\n".format(c['parameters']['tag'], c['name'], s)
         return code
 
     def addComponentInTemplate(self, data):

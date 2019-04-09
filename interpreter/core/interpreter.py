@@ -54,6 +54,12 @@ class Interpreter:
             data = json.load(json_file)
             return data
 
+    def getSeparator(self, separator, end, el, list):
+        if list[-1] == el:
+            return separator
+        else:
+            return end
+
     def loadModel(self, filenameJSON):
         return self.loadJSON(filenameJSON)
 
