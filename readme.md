@@ -12,9 +12,9 @@ python main.py [`projectJSON`] [`modelPath`] [`interpreters`]
 
 `projectJSON`: Filename project in format JSON.
 
-`modelPath`: Pathname project with containg model files.
+`modelPath`: Pathname project with containg the model files.
 
-`interpreters`: Interpreters to want use.
+`interpreters`: Interpreters you want to use.
 
 ~~~
 interpreter/$python main.py myproject.json ../input/example interpreterVue:vue.json,interpreterPG:pg.json
