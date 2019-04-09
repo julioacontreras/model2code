@@ -2,8 +2,6 @@
 
 Tool to convert model to code.
 
-## Why
-
 * Design more and program less: Most projects have a lot of similar code. This tool allows you to create templates and models to generate code. Increasing productivity and reducing human error.
 
 * Facilitating technology migration: Once you have templates and templates, you can change the technology by changing the interpreter.
