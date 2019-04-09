@@ -77,6 +77,6 @@ All connections between components.
 ]
 ~~~
 
-## Parametros
+## Parameters
 
 Parameters differ according to the interpreter. Exist in `components`, `models` and `flow`
