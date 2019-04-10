@@ -110,7 +110,6 @@ This is a simple example code template than interpreter will replace de tag `@@m
 </template>
 
 <script>
-
 export default {
       components:{
           @@my-tag@@
