@@ -16,7 +16,6 @@ if __name__ == '__main__':
 
     print("project: {}".format(project))
     print("path: {}".format(path))
-    print("interpreters: {}".format(interpreters))
 
     def fcUppcase(value):
         return value[0].upper()+value[1:]
@@ -25,6 +24,7 @@ if __name__ == '__main__':
         params = el.split(":")
         interpreter = "core.{}".format(params[0])
         config = params[1]
+        print("")
         print("interpreter: {}".format(interpreter))
         InterpreterEntity = __import__(interpreter)
         InterpreterClass = getattr(InterpreterEntity, fcUppcase(params[0]) )

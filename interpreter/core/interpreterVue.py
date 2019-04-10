@@ -13,7 +13,12 @@ class InterpreterVue:
         code = ""
         for c in data['components']:
             s = self.interpreter.getSeparator(",\n", "", c, data['components'])
-            code += "import {} from '@/{}/{}'{}".format(c['name'], c['parameters']['area'], c['parameters']['filename'], s)
+            code += "import %(class)s from '@/%(area)s/%(filename)s'%(sep)s" % {
+                'class'    : c['name'],
+                'area'     : c['parameters']['area'],
+                'filename' : c['parameters']['filename'],
+                'sep'      : s
+            }
         return code
 
     def addComponentInGlobal(self, data):
