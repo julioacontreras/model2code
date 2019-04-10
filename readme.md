@@ -48,7 +48,7 @@ This is the architecture divided into inputs, interpreters and outputs.
 
 ### Get started to create an interpreter
 
-This code is your model project. Here will put all information about your project, like: Components, Models and Flow. 
+This JSON file is a model project. Here will put all information about project, like: Components, Models and Flow. 
 
 [Model specification](model.md)
 
