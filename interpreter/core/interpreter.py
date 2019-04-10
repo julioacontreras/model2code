@@ -56,9 +56,9 @@ class Interpreter:
 
     def getSeparator(self, separator, end, el, list):
         if list[-1] == el:
-            return separator
-        else:
             return end
+        else:
+            return separator
 
     def loadModel(self, filenameJSON):
         return self.loadJSON(filenameJSON)

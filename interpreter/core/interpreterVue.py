@@ -12,48 +12,55 @@ class InterpreterVue:
     def addImports(self, data):
         code = ""
         for c in data['components']:
-            code += "import {} from '@/{}/{}'\n".format(c['name'], c['parameters']['area'], c['parameters']['filename'])
+            s = self.interpreter.getSeparator(",\n", "", c, data['components'])
+            code += "import {} from '@/{}/{}'{}".format(c['name'], c['parameters']['area'], c['parameters']['filename'], s)
         return code
 
     def addComponentInGlobal(self, data):
         code = ""
         for c in data['components']:
-            code += "Vue.component('{}','{}');\n".format(c['parameters']['tag'] , c['name'])
+            s = self.interpreter.getSeparator(",\n", "", c, data['components'])
+            code += "Vue.component('{}','{}');{}".format(c['parameters']['tag'] , c['name'], s)
         return code
 
     def addComponentInClass(self, data):
         code = ""
         for c in data['components']:
-            s = self.interpreter.getSeparator(",", "", c, data['components'])
-            code += "   '{}':{}{}\n".format(c['parameters']['tag'], c['name'], s)
+            s = self.interpreter.getSeparator(",\n", "", c, data['components'])
+            code += "        '{}':{}{}".format(c['parameters']['tag'], c['name'], s)
         return code
 
     def addComponentInTemplate(self, data):
         code = ""
         for c in data['components']:
-            code += "<{}/>\n".format(c['parameters']['tag'])
+            s = self.interpreter.getSeparator("\n", "", c, data['components'])
+            code += "        <{}/>{}".format(c['parameters']['tag'], s)
         return code
 
     def addModelInTemplate(self, elM):
         code = ""
         for m in elM['fields']:
+            s = self.interpreter.getSeparator("\n", "", m, elM['fields'])
             title = ""
             if 'label' in m['parameters']:
                 title = '<label>{}</label>'.format(m['parameters']['label'])
-            code += "           {}<{} v-model='{}' type='{}' />\n".format(
+            code += "           {}<{} v-model='{}' type='{}' />{}".format(
                     title,
                     m['parameters']['tagTemplate'],
                     m['field'],
-                    m['parameters']['typeElement']
+                    m['parameters']['typeElement'],
+                    s
                 )
         return code
 
     def addModelInData(self, elM):
         code = ""
         for m in elM['fields']:
-            code += "           '{}':'{}',\n".format(
+            s = self.interpreter.getSeparator(",\n", "", m, elM['fields'])
+            code += "           '{}':'{}'{}".format(
                     m['field'],
-                    m['parameters']['valueDefaultData']
+                    m['parameters']['valueDefaultData'],
+                    s
                 )
         return code
 

@@ -7,14 +7,13 @@
 
 <script>
 @@add-imports@@
-
 import User from "@/views/User.vue"
 
 export default {
     name: 'app',
     components:{
+        'user-view': User,
 @@add-component-in-class@@
-        'user-view': User
     }
 }
 </script>
