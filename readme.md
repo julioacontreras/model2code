@@ -46,7 +46,7 @@ This is the architecture divided into inputs, interpreters and outputs.
 +------------+   +--------------+   +--------------+
 ~~~
 
-### Get started to create your interpreter
+### Get started to create the interpreter
 
 This code is your model project. Here will put all information about your project, like: Components, Models and Flow. 
 
