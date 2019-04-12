@@ -46,9 +46,9 @@ This is the architecture divided into inputs, interpreters and outputs.
 +------------+   +--------------+   +--------------+
 ~~~
 
-### Get started to create your interpreter
+### Get started to create an interpreter
 
-This code is your model project. Here will put all information about your project, like: Components, Models and Flow. 
+This JSON file is a model project. Here will put all information about project, like: Components, Models and Flow. 
 
 [Model specification](model.md)
 
@@ -110,7 +110,6 @@ This is a simple example code template than interpreter will replace de tag `@@m
 </template>
 
 <script>
-
 export default {
       components:{
           @@my-tag@@
